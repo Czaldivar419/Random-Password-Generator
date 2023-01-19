@@ -1,10 +1,19 @@
 // Assignment code here
 function generatePassword() {
-  var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var numbers = "0123456789"
+  var specChar = "!@#$%^&*()"
   var pw = "";
+
   
+  
+
+
+
+
   for (i = 0; i <=15; i++) {
-    pw += chars.charAt(Math.floor(Math.random()*chars.length));
+    pw += newSet.charAt(Math.floor(Math.random()*newSet.length));
   }
   return pw
 }
