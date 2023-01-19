@@ -1,17 +1,36 @@
 // Assignment code here
 function generatePassword() {
+  // different character sets available 
   var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var lowerCase = "abcdefghijklmnopqrstuvwxyz";
   var numbers = "0123456789"
   var specChar = "!@#$%^&*()"
   var pw = "";
+  var newSet = "";
 
+  // query selectors determine the users password character preferences
+  const upper = document.querySelector('#uppercase');
+  const lower = document.querySelector('#lowercase');
+  const num = document.querySelector('#numbers');
+  const spec = document.querySelector('#specChar');
+
+  // function that checks to see if option is checked and adds it to a new array(if true)
+  function checkbox(box, charset) {
+    for (i = 0; i <= 1; i++) {
+      if (box.checked === true) {
+        newSet += charset
+      }
+    }
+  }
+
+  checkbox(upper, upperCase);
+  checkbox(lower, lowerCase);
+  checkbox(num, numbers);
+  checkbox(spec, specChar);
   
-  
 
 
-
-
+// function to create the password from the customized array
   for (i = 0; i <=15; i++) {
     pw += newSet.charAt(Math.floor(Math.random()*newSet.length));
   }
