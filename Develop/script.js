@@ -9,10 +9,10 @@ function generatePassword() {
   var newSet = "";
 
   // query selectors determine the users password character preferences
-  const upper = document.querySelector('#uppercase');
-  const lower = document.querySelector('#lowercase');
-  const num = document.querySelector('#numbers');
-  const spec = document.querySelector('#specChar');
+  var upper = document.querySelector('#uppercase');
+  var lower = document.querySelector('#lowercase');
+  var num = document.querySelector('#numbers');
+  var spec = document.querySelector('#specChar');
 
   // function that checks to see if option is checked and adds it to a new array(if true)
   function checkbox(box, charset) {
@@ -22,16 +22,13 @@ function generatePassword() {
       }
     }
   }
-
   checkbox(upper, upperCase);
   checkbox(lower, lowerCase);
   checkbox(num, numbers);
   checkbox(spec, specChar);
-  
-
 
 // function to create the password from the customized array
-  for (i = 0; i <=15; i++) {
+  for (i = 0; i < 20; i++) {
     pw += newSet.charAt(Math.floor(Math.random()*newSet.length));
   }
   return pw
